@@ -1,16 +1,25 @@
-import React from "react";
+import React, { Component } from "react";
+import { useHistory } from "react-router-dom";
 import "../styles/NavBar.css";
 
 const NavBar = () => {
+  const history = useHistory();
+
+  function handleRouteChange(e) {
+    history.push(`/${e.currentTarget.value}`);
+  }
+
   return (
     <div>
       <nav className="slidemenu">
         <input
           type="radio"
           id="slide-item-1"
-          name="video"
+          name="route"
           className="slide-toggle"
           defaultChecked
+          value=""
+          onChange={(e) => handleRouteChange(e)}
         />
         <label htmlFor="slide-item-1">
           <p className="icon">⭐</p>
@@ -20,8 +29,10 @@ const NavBar = () => {
         <input
           type="radio"
           id="slide-item-2"
-          name="video"
+          name="route"
           className="slide-toggle"
+          value="full"
+          onChange={(e) => handleRouteChange(e)}
         />
         <label htmlFor="slide-item-2">
           <p className="icon">📹</p>
@@ -31,7 +42,7 @@ const NavBar = () => {
         <input
           type="radio"
           id="slide-item-3"
-          name="video"
+          name="route"
           className="slide-toggle"
         />
         <label htmlFor="slide-item-3">
@@ -42,7 +53,7 @@ const NavBar = () => {
         <input
           type="radio"
           id="slide-item-4"
-          name="video"
+          name="route"
           className="slide-toggle"
         />
         <label htmlFor="slide-item-4">
