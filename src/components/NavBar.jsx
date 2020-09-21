@@ -13,8 +13,8 @@ const NavBar = () => {
           defaultChecked
         />
         <label htmlFor="slide-item-1">
-          <p className="icon">♬</p>
-          <span>Full</span>
+          <p className="icon">⭐</p>
+          <span>Home</span>
         </label>
 
         <input
@@ -24,8 +24,8 @@ const NavBar = () => {
           className="slide-toggle"
         />
         <label htmlFor="slide-item-2">
-          <p className="icon">★</p>
-          <span>No Sound</span>
+          <p className="icon">📹</p>
+          <span>Full</span>
         </label>
 
         <input
@@ -35,8 +35,8 @@ const NavBar = () => {
           className="slide-toggle"
         />
         <label htmlFor="slide-item-3">
-          <p className="icon">✎</p>
-          <span>No Video</span>
+          <p className="icon">🔊</p>
+          <span>Sound Only</span>
         </label>
 
         <input
@@ -46,8 +46,8 @@ const NavBar = () => {
           className="slide-toggle"
         />
         <label htmlFor="slide-item-4">
-          <p className="icon">✎</p>
-          <span>No Video</span>
+          <p className="icon">🔇</p>
+          <span>Video Only</span>
         </label>
 
         <div className="clear"></div>
