@@ -1,8 +1,10 @@
 import React from "react";
+
 const Home = () => {
   return (
-    <div>
-      <h1>This is home</h1>
+    <div className="content">
+      <h1>Home</h1>
+      <p>Welcome to YoutubeDownloader</p>
     </div>
   );
 };

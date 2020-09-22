@@ -4,12 +4,7 @@ import NavBar from "./NavBar";
 import SlideRoutes from "react-slide-routes";
 import { Route, useLocation } from "react-router-dom";
 import Home from "./routes/Home";
-
-const Full = () => (
-  <div>
-    <h1>Full Download</h1>
-  </div>
-);
+import Full from "./routes/Full";
 
 function App() {
   const location = useLocation();
