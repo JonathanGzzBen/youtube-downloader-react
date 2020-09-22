@@ -17,7 +17,7 @@ function App() {
   return (
     <div>
       <NavBar />
-      <SlideRoutes location={location} duration={500}>
+      <SlideRoutes location={location} duration={500} pathList={["/", "/full"]}>
         <Route path="/" component={Home} exact />
         <Route path="/full" component={Full} />
       </SlideRoutes>
