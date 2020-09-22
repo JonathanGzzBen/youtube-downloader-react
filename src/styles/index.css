@@ -15,3 +15,14 @@ code {
 html {
   background-color: white;
 }
+
+.content {
+  width: 60vw;
+  margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    width: 90vw;
+  }
+}

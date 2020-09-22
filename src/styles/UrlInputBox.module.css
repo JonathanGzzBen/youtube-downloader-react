@@ -4,7 +4,7 @@
   --box-shadow: 2px 5px 5px black;
 }
 
-input[type="text"] {
+.url-input-box input[type="text"] {
   margin: auto;
   padding: 8px;
   border: var(--border);
@@ -13,11 +13,11 @@ input[type="text"] {
   transition: all 0.3s;
 }
 
-input[type="text"]:hover {
+.url-input-box input[type="text"]:hover {
   box-shadow: var(--box-shadow);
 }
 
-button {
+.url-input-box button {
   width: 25%;
   margin: 8px 5px 5px;
   padding: 8px 12px;
@@ -29,7 +29,7 @@ button {
   transition: all 0.3s;
 }
 
-button:hover {
+.url-input-box button:hover {
   box-shadow: var(--box-shadow);
 }
 
@@ -38,7 +38,7 @@ button:hover {
     width: 100%;
   }
 
-  button {
+  .url-input-box button {
     margin: 10px 10px 10px 10px;
     width: 60vw;
     margin-left: auto;
