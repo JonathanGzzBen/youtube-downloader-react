@@ -1,15 +1,22 @@
-:root {
+.url-input-box {
   --font-size: 20px;
-  --border: 2px solid #666;
-  --box-shadow: 2px 5px 5px black;
+  --main-color: #333;
+  --secondary-color: #666;
+  --border: 2px solid var(--secondary-color);
+  --box-shadow: 2px 5px 5px var(--main-color);
+}
+
+.url-input-box {
+  text-align: center;
 }
 
 .url-input-box input[type="text"] {
-  margin: auto;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 10px 10px 10px 10px;
   padding: 8px;
   border: var(--border);
   font-size: var(--font-size);
-  width: 70%;
   transition: all 0.3s;
 }
 
@@ -18,13 +25,13 @@
 }
 
 .url-input-box button {
-  width: 25%;
+  width: 60%;
   margin: 8px 5px 5px;
   padding: 8px 12px;
   font-size: var(--font-size);
   border: var(--border);
   background: 0;
-  color: #333;
+  color: var(--main-color);
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -33,15 +40,14 @@
   box-shadow: var(--box-shadow);
 }
 
-@media screen and (max-width: 600px) {
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
   .url-input-box input[type="text"] {
-    width: 100%;
+    margin: 0;
+    width: 70%;
   }
 
   .url-input-box button {
-    margin: 10px 10px 10px 10px;
-    width: 60vw;
-    margin-left: auto;
-    margin-right: auto;
+    width: 25%;
   }
 }
