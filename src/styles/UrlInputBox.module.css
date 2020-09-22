@@ -1,0 +1,47 @@
+:root {
+  --font-size: 20px;
+  --border: 2px solid #666;
+  --box-shadow: 2px 5px 5px black;
+}
+
+input[type="text"] {
+  margin: auto;
+  padding: 8px;
+  border: var(--border);
+  font-size: var(--font-size);
+  width: 70%;
+  transition: all 0.3s;
+}
+
+input[type="text"]:hover {
+  box-shadow: var(--box-shadow);
+}
+
+button {
+  width: 25%;
+  margin: 8px 5px 5px;
+  padding: 8px 12px;
+  font-size: var(--font-size);
+  border: var(--border);
+  background: 0;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  box-shadow: var(--box-shadow);
+}
+
+@media screen and (max-width: 600px) {
+  .url-input-box input[type="text"] {
+    width: 100%;
+  }
+
+  button {
+    margin: 10px 10px 10px 10px;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
