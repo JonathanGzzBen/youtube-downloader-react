@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import "../styles/NavBar.css";
 
@@ -22,7 +22,9 @@ const NavBar = () => {
           onChange={(e) => handleRouteChange(e)}
         />
         <label htmlFor="slide-item-1">
-          <p className="icon">⭐</p>
+          <span className="icon" role="img" aria-label="video-only">
+            ⭐
+          </span>
           <span>Home</span>
         </label>
 
@@ -35,7 +37,9 @@ const NavBar = () => {
           onChange={(e) => handleRouteChange(e)}
         />
         <label htmlFor="slide-item-2">
-          <p className="icon">📹</p>
+          <span className="icon" role="img" aria-label="video-only">
+            📹
+          </span>
           <span>Full</span>
         </label>
 
@@ -46,7 +50,9 @@ const NavBar = () => {
           className="slide-toggle"
         />
         <label htmlFor="slide-item-3">
-          <p className="icon">🔊</p>
+          <span className="icon" role="img" aria-label="video-only">
+            🔊
+          </span>
           <span>Sound Only</span>
         </label>
 
@@ -57,7 +63,9 @@ const NavBar = () => {
           className="slide-toggle"
         />
         <label htmlFor="slide-item-4">
-          <p className="icon">🔇</p>
+          <span className="icon" role="img" aria-label="video-only">
+            🔇
+          </span>
           <span>Video Only</span>
         </label>
 

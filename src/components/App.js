@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/App.css";
 import NavBar from "./NavBar";
 import SlideRoutes from "react-slide-routes";
-import { Route, NavLink, useLocation } from "react-router-dom";
+import { Route, useLocation } from "react-router-dom";
 import Home from "./routes/Home";
 
 const Full = () => (
