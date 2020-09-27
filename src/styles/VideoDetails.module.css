@@ -1,0 +1,28 @@
+.video-details {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.video-details > div {
+  padding: 10px;
+}
+
+.video-details img {
+  border-radius: 20px;
+  width: 100%;
+}
+
+.video-details td {
+  padding: 5px;
+}
+
+@media only screen and (min-width: 992px) {
+  .video-details {
+    flex-wrap: nowrap;
+  }
+
+  .video-details img {
+    width: auto;
+  }
+}
