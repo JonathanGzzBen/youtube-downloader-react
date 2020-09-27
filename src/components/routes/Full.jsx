@@ -19,14 +19,15 @@ class Full extends React.Component {
       });
     });
   }
+
   render() {
     return (
       <div className="content">
         <h1>Full Download</h1>
         <UrlInputBox onSearchButtonClick={this.searchButtonClickHandler} />
-        {this.state.videoDetails !== null ? (
+        {this.state.videoDetails && (
           <VideoDetails {...this.state.videoDetails} />
-        ) : null}
+        )}
       </div>
     );
   }
