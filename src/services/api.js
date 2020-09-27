@@ -2,7 +2,7 @@ import axios from "axios";
 import fileDownload from "js-file-download";
 
 const clientV1 = axios.create({
-  baseURL: "https://localhost:44319/api/v1/",
+  baseURL: "http://localhost:5000/api/v1/",
 });
 
 const v1 = {
