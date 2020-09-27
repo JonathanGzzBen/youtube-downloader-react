@@ -1,4 +1,5 @@
 import axios from "axios";
+import fileDownload from "js-file-download";
 
 const clientV1 = axios.create({
   baseURL: "https://localhost:44319/api/v1/",
@@ -9,6 +10,17 @@ const v1 = {
     return clientV1.get("/videos/details/", {
       params: { videoUrl: videoUrl },
     });
+  },
+  downloadVideo: (videoUrl) => {
+    clientV1
+      .get("/videos/download/", {
+        params: { videoUrl: videoUrl },
+        responseType: "blob",
+      })
+      .then((response) => {
+        fileDownload(response.data, "video.mp4");
+      });
+    return;
   },
 };
 
