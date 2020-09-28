@@ -12,15 +12,10 @@ const v1 = {
     });
   },
   downloadVideo: (videoUrl) => {
-    clientV1
-      .get("/videos/download/", {
-        params: { videoUrl: videoUrl },
-        responseType: "blob",
-      })
-      .then((response) => {
-        fileDownload(response.data, "video.mp4");
-      });
-    return;
+    return clientV1.get("/videos/download/", {
+      params: { videoUrl: videoUrl },
+      responseType: "blob",
+    });
   },
 };
 

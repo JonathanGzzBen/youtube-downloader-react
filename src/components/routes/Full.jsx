@@ -1,3 +1,4 @@
+import fileDownload from "js-file-download";
 import React from "react";
 import api from "../../services/api";
 import UrlInputBox from "../UrlInputBox";
@@ -6,17 +7,26 @@ import VideoDetails from "../VideoDetails";
 class Full extends React.Component {
   constructor(props) {
     super(props);
-    this.searchButtonClickHandler = this.searchButtonClickHandler.bind(this);
     this.state = {
       videoDetails: null,
     };
+    this.searchButtonClickHandler = this.searchButtonClickHandler.bind(this);
+    this.downloadButtonClickHandler = this.downloadButtonClickHandler.bind(
+      this
+    );
   }
 
-  searchButtonClickHandler(videoUrl) {
-    api.v1.getDetails(videoUrl).then((response) => {
+  async searchButtonClickHandler(videoUrl) {
+    await api.v1.getDetails(videoUrl).then((response) => {
       this.setState({
         videoDetails: response.data,
       });
+    });
+  }
+
+  async downloadButtonClickHandler(videoUrl) {
+    await api.v1.downloadVideo(videoUrl).then((response) => {
+      fileDownload(response.data, "my_video.mp4");
     });
   }
 
@@ -24,7 +34,10 @@ class Full extends React.Component {
     return (
       <div className="content">
         <h1>Full Download</h1>
-        <UrlInputBox onSearchButtonClick={this.searchButtonClickHandler} />
+        <UrlInputBox
+          onSearchButtonClick={this.searchButtonClickHandler}
+          onDownloadButtonClick={this.downloadButtonClickHandler}
+        />
         {this.state.videoDetails && (
           <VideoDetails {...this.state.videoDetails} />
         )}

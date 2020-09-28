@@ -1,5 +1,4 @@
 import React from "react";
-import api from "../services/api";
 import urlInputBoxStyles from "../styles/UrlInputBox.module.css";
 
 class UrlInputBox extends React.Component {
@@ -7,19 +6,23 @@ class UrlInputBox extends React.Component {
     super(props);
     this.state = {
       showSearch: true,
+      isLoading: false,
     };
 
     this.handleSearchButtonClick = this.handleButtonClick.bind(this);
   }
 
-  handleButtonClick() {
+  async handleButtonClick() {
     const videoUrl = document.getElementById("url-box").value;
+    this.setState({ isLoading: true });
     if (this.state.showSearch) {
-      this.props.onSearchButtonClick(videoUrl);
       this.setState({ showSearch: false });
+      await this.props.onSearchButtonClick(videoUrl);
     } else {
-      api.v1.downloadVideo(videoUrl);
+      this.setState({ showSearch: true });
+      await this.props.onDownloadButtonClick(videoUrl);
     }
+    this.setState({ isLoading: false });
   }
 
   render() {
@@ -31,7 +34,16 @@ class UrlInputBox extends React.Component {
           placeholder="Enter video's url here..."
         />
         <button onClick={() => this.handleButtonClick()}>
-          {this.state.showSearch ? "Search" : "Download"}
+          {this.state.isLoading ? (
+            <img
+              src="https://cdnjs.cloudflare.com/ajax/libs/timelinejs/2.25/css/loading.gif"
+              alt="Loading"
+            />
+          ) : this.state.showSearch ? (
+            "Search"
+          ) : (
+            "Download"
+          )}
         </button>
       </div>
     );
