@@ -28,16 +28,16 @@ const VideoDetails = (props) => {
         <h2>{title}</h2>
         <hr />
         <table>
-          <tr>
-            {detailsList.map((detail) => {
+          <tbody>
+            {detailsList.map((detail, index) => {
               return (
-                <tr>
-                  <td>{detail.name}:</td>
+                <tr key={index}>
+                  <th>{detail.name}:</th>
                   <td>{detail.value}</td>
                 </tr>
               );
             })}
-          </tr>
+          </tbody>
         </table>
       </div>
     </div>
