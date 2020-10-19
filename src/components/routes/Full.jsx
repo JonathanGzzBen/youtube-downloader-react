@@ -17,11 +17,16 @@ class Full extends React.Component {
   }
 
   async searchButtonClickHandler(videoUrl) {
-    await api.v1.getDetails(videoUrl).then((response) => {
-      this.setState({
-        videoDetails: response.data,
+    try {
+      await api.v1.getDetails(videoUrl).then((response) => {
+        this.setState({
+          videoDetails: response.data,
+        });
       });
-    });
+    }
+    catch (e) {
+      alert(e.message);
+    }
   }
 
   async downloadButtonClickHandler(videoUrl) {
