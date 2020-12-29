@@ -1,6 +1,6 @@
 # Youtube Downloader
 
-Frontend for [YoutubeDownloader](https://github.com/JonathanGzzBen/YoutubeDownloader). To make this project run it is needed to also run the backend API on [http://localhost:5000](http://localhost:5000).
+Frontend for [YoutubeDownloader](https://github.com/JonathanGzzBen/YoutubeDownloader). To make this project work it is needed to also run the backend API on [http://localhost:5000](http://localhost:5000).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
